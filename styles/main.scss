@@ -1,0 +1,59 @@
+@import 'config';
+@import 'responsive';
+
+body{
+    font-family: $font-primary;
+    background-color: $color-primary;
+    font-size: 16px;
+}
+
+.header{
+    padding: 3em;
+
+    &--title{
+        text-align: center;
+        font-size: 3.5em;
+        color: $color-second;
+    }
+}
+
+.registration{
+    padding: 2em;
+    display: grid;
+    justify-content: center;
+    color: $color-second;
+
+    &__form{
+        display: grid;
+        font-size: 16px;
+
+        &>:nth-child(even){
+            font-size: 1.2em;
+            height: 2em;
+            width: 15em;
+            margin-bottom: .5em;
+            padding: .8em;
+            text-align: center;
+            background-color: $color-primary;
+            border: 2px solid $color-second;
+            border-radius: 1em;
+            color: $color-second;
+        }
+        &>:nth-child(odd){
+            font-size: 1.2em;
+            font-weight: bold;
+            margin-left: .5em;
+        }
+
+        &--submit{
+            margin-top: 2em;
+            height: 2.5em;
+            background-color: $color-second;
+            border-radius: 1em;
+            color: $color-primary;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 1.5em;
+        }
+    }
+}

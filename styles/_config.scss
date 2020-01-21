@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css?family=Alata&display=swap');
+
+$font-primary: 'Alata', sans-serif;
+$color-primary: #FFE961;
+$color-second: #25C2CC;
+
+*, *::after, *::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+input{
+    border: 0;
+    outline: 0;
+
+    &[type=button]{
+        cursor: pointer;
+    }
+}
