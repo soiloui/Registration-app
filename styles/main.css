@@ -41,19 +41,24 @@ body {
   color: #25C2CC;
 }
 
+.registration .hidden {
+  display: none;
+}
+
 .registration__form {
   display: -ms-grid;
   display: grid;
   font-size: 16px;
 }
 
-.registration__form > :nth-child(even) {
+.registration__form--input {
   font-size: 1.2em;
   height: 2em;
   width: 15em;
   margin-bottom: .5em;
   padding: .8em;
   text-align: center;
+  text-transform: capitalize;
   background-color: #FFE961;
   border: 2px solid #25C2CC;
   border-radius: 1em;

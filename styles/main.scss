@@ -23,17 +23,29 @@ body{
     justify-content: center;
     color: $color-second;
 
+    // .reg-popup{
+    //     width: 15em;
+    //     height: 8em;
+    //     background-color: #ccc;
+    //     display: auto;
+    //     position: absolute;
+    // }
+    .hidden{
+        display: none;
+    }
+
     &__form{
         display: grid;
         font-size: 16px;
 
-        &>:nth-child(even){
+        &--input{
             font-size: 1.2em;
             height: 2em;
             width: 15em;
             margin-bottom: .5em;
             padding: .8em;
             text-align: center;
+            text-transform: capitalize;
             background-color: $color-primary;
             border: 2px solid $color-second;
             border-radius: 1em;
