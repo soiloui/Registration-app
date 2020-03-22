@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Registration</title>
+    <link rel="stylesheet" href="./styles/main.css">
 </head>
 <body>
     <header class="header">
@@ -12,15 +13,29 @@
     </header>
     <main>
         <section class="registration">
-            <form class="registration__form">
-                <input type="text" class="registration__form--name" id="name-input">
-                <input type="text" class="registration__form--lastname" id="lastname-input">
-                <input type="email" class="registration__form--email" id="email-input">
-                <input type="password" class="registration__form--pass" id="pass-input">
-                <input type="password" class="registration__form--passconfirm" id="passconfirm-input">
-                <input type="button" value="Sign Up">
+            <form class="registration__form" id='registration-form'>
+
+                <label for="name-input" class="registration__form--descript">Name</label>
+                <input type="text" class="registration__form--name registration__form--input form-input" id="name-input">
+
+                <label for="lastname-input" class="registration__form--descript">Last Name</label>
+                <input type="text" class="registration__form--lastname registration__form--input form-input" id="lastname-input">
+
+                <label for="email-input" class="registration__form--descript">Email</label>
+                <input type="email" class="registration__form--email registration__form--input form-input" id="email-input">
+
+                <label for="pass-input" class="registration__form--descript">Password</label>
+                <input type="password" class="registration__form--pass registration__form--input form-input" id="pass-input">
+
+                <label for="passconfirm-input" class="registration__form--descript">Password Confirm</label>
+                <input type="password" class="registration__form--passconfirm registration__form--input form-input" id="passconfirm-input">
+
+                <button type="submit" class="registration__form--submit" id="submit-input">Sign Up</button>
+
             </form>
         </section>
     </main>
+
+    <script src="script.js"></script>
 </body>
 </html>
