@@ -13,19 +13,25 @@
     </header>
     <main>
         <section class="registration">
-            <form class="registration__form">
-                <span class="registration__form--descript">Name</span>
+            <form class="registration__form" id='registration-form'>
+
+                <label for="name-input" class="registration__form--descript">Name</label>
                 <input type="text" class="registration__form--name registration__form--input form-input" id="name-input">
-                <span class="registration__form--descript">Last Name</span>
+
+                <label for="lastname-input" class="registration__form--descript">Last Name</label>
                 <input type="text" class="registration__form--lastname registration__form--input form-input" id="lastname-input">
-                <span class="registration__form--descript">Email</span>
+
+                <label for="email-input" class="registration__form--descript">Email</label>
                 <input type="email" class="registration__form--email registration__form--input form-input" id="email-input">
-                <span class="registration__form--descript">Password</span>
+
+                <label for="pass-input" class="registration__form--descript">Password</label>
                 <input type="password" class="registration__form--pass registration__form--input form-input" id="pass-input">
-                <span class="registration__form--descript">Password Confirm</span>
+
+                <label for="passconfirm-input" class="registration__form--descript">Password Confirm</label>
                 <input type="password" class="registration__form--passconfirm registration__form--input form-input" id="passconfirm-input">
 
-                <input type="button" class="registration__form--submit" id="submit-input" value="Sign Up">
+                <button type="submit" class="registration__form--submit" id="submit-input">Sign Up</button>
+
             </form>
         </section>
     </main>

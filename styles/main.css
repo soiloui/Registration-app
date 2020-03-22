@@ -11,10 +11,6 @@ input {
   outline: 0;
 }
 
-input[type=button] {
-  cursor: pointer;
-}
-
 body {
   font-family: "Alata", sans-serif;
   background-color: #FFE961;
@@ -41,14 +37,18 @@ body {
   color: #25C2CC;
 }
 
-.registration .hidden {
-  display: none;
-}
-
 .registration__form {
   display: -ms-grid;
   display: grid;
   font-size: 16px;
+}
+
+.registration__form .reg-popup {
+  color: rgba(250, 30, 30, 0.7);
+  max-width: 15em;
+  font-size: 14px;
+  padding-bottom: .2em;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .registration__form--input {
@@ -58,11 +58,14 @@ body {
   margin-bottom: .5em;
   padding: .8em;
   text-align: center;
-  text-transform: capitalize;
   background-color: #FFE961;
   border: 2px solid #25C2CC;
   border-radius: 1em;
   color: #25C2CC;
+}
+
+.registration__form--name, .registration__form--lastname {
+  text-transform: capitalize;
 }
 
 .registration__form > :nth-child(odd) {
@@ -75,8 +78,11 @@ body {
   margin-top: 2em;
   height: 2.5em;
   background-color: #25C2CC;
+  border: 0;
+  outline: 0;
   border-radius: 1em;
   color: #FFE961;
+  cursor: pointer;
   font-weight: bold;
   text-transform: uppercase;
   font-size: 1.5em;

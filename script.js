@@ -1,18 +1,22 @@
 'use strict'
 
+const FORM = document.querySelector('#registration-form');
 const INPUTS = document.querySelectorAll('.form-input');
-
+let errors = 0;
 
 function createPop(input, txt) {
     const POPUP_div = document.createElement('p');
     POPUP_div.id = 'reg-pop';
+    POPUP_div.classList.add('reg-popup');
     input.previousElementSibling.appendChild(POPUP_div);
     POPUP_div.innerHTML = txt;
+    errors++;
 }
-function deletePop(parent) {
-        console.log(`object`);
-        if(parent.querySelector('#reg-pop')!=null){
-            parent.removeChild(parent.firstElementChild);
+
+function deletePop(PREV) {
+        if(PREV.querySelector('#reg-pop')!=null){
+            PREV.removeChild(PREV.firstElementChild);
+            errors--;
         }
 }
 
@@ -20,41 +24,92 @@ function checkInput(){
     switch(this.id)
     {
     case 'name-input':
-        let parent = this.previousElementSibling;
-
-        if(this.value.length<3){
-            if(document.querySelector('#reg-pop')==null){
+        if(this.value.length<3 && this.value.length>0){
+            let PREV = this.previousElementSibling;
+            if(PREV.querySelector('#reg-pop')==null){
                 let txt = 'Min 3 characters';
                 createPop(this, txt);
             }
-
-            this.addEventListener('click', deletePop(parent));
+        }
+        else if(this.value.length>18){
+            let PREV = this.previousElementSibling;
+            if(PREV.querySelector('#reg-pop')==null){
+                let txt = 'Max 18 characters';
+                createPop(this, txt);
+            }
         } else{
-            deletePop(parent);
+            deletePop(this.previousElementSibling);
         }
         break;
 
+
     case 'lastname-input':
-        //jakiś kod
+        if(this.value.length<3 && this.value.length>0){
+            let PREV = this.previousElementSibling;
+            if(PREV.querySelector('#reg-pop')==null){
+                let txt = 'Min 3 characters';
+                createPop(this, txt);
+            }
+        }
+        else if(this.value.length>18){
+            let PREV = this.previousElementSibling;
+            if(PREV.querySelector('#reg-pop')==null){
+                let txt = 'Max 18 characters';
+                createPop(this, txt);
+            }
+        } else{
+            deletePop(this.previousElementSibling);
+        }
         break;
 
-        //...
+
     case 'email-input':
-        //jakiś kod
+        if(!this.value.match(/^\w+@\w+\.[a-z]{2,3}/gi) && this.value.length>0){
+            let PREV = this.previousElementSibling;
+            if(PREV.querySelector('#reg-pop')==null){
+                let txt = 'Invalid e-mail';
+                createPop(this, txt);
+            }
+        } else{
+            deletePop(this.previousElementSibling);
+        }
         break;
+
 
     case 'pass-input':
-        //jakiś kod
+        if((this.value.length<8 || !this.value.match(/(?=.*?[A-Z])(?=.*?[a-z])(?=.*?\d)(?=.*?[!@#$%^&*()-/:?{}~"_`\[\]])/g) || this.value.match(/\s/g)) && this.value.length>0){
+            let PREV = this.previousElementSibling;
+            if(PREV.querySelector('#reg-pop')==null){
+                let txt = 'Min 8 characters, requried 1 digit, symbol, uppercase & lowercase letter, no spaces';
+                createPop(this, txt);
+            }
+        } else{
+            deletePop(this.previousElementSibling);
+        }
         break;
 
+
     case 'passconfirm-input':
-        //jakiś kod
+        if(this.value != document.querySelector("#pass-input").value){
+            let PREV = this.previousElementSibling;
+            if(PREV.querySelector('#reg-pop')==null){
+                let txt = 'Must be the same as above';
+                createPop(this, txt);
+            }
+        } else{
+            deletePop(this.previousElementSibling);
+        }
         break;
     }
 }
 
 
 
+FORM.addEventListener('submit', e =>{
+    if(!errors == 0){
+        e.preventDefault();
+    }
+});
 
 INPUTS.forEach(input => {
     input.addEventListener('input', checkInput);
