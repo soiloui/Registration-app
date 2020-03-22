@@ -1,0 +1,90 @@
+@import url("https://fonts.googleapis.com/css?family=Alata&display=swap");
+*, *::after, *::before {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+input {
+  border: 0;
+  outline: 0;
+}
+
+body {
+  font-family: "Alata", sans-serif;
+  background-color: #FFE961;
+  font-size: 16px;
+}
+
+.header {
+  padding: 3em;
+}
+
+.header--title {
+  text-align: center;
+  font-size: 3.5em;
+  color: #25C2CC;
+}
+
+.registration {
+  padding: 2em;
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: #25C2CC;
+}
+
+.registration__form {
+  display: -ms-grid;
+  display: grid;
+  font-size: 16px;
+}
+
+.registration__form .reg-popup {
+  color: rgba(250, 30, 30, 0.7);
+  max-width: 15em;
+  font-size: 14px;
+  padding-bottom: .2em;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.registration__form--input {
+  font-size: 1.2em;
+  height: 2em;
+  width: 15em;
+  margin-bottom: .5em;
+  padding: .8em;
+  text-align: center;
+  background-color: #FFE961;
+  border: 2px solid #25C2CC;
+  border-radius: 1em;
+  color: #25C2CC;
+}
+
+.registration__form--name, .registration__form--lastname {
+  text-transform: capitalize;
+}
+
+.registration__form > :nth-child(odd) {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-left: .5em;
+}
+
+.registration__form--submit {
+  margin-top: 2em;
+  height: 2.5em;
+  background-color: #25C2CC;
+  border: 0;
+  outline: 0;
+  border-radius: 1em;
+  color: #FFE961;
+  cursor: pointer;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 1.5em;
+}
+/*# sourceMappingURL=main.css.map */
